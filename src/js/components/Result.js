@@ -3,9 +3,9 @@ import { connect } from "react-redux";
 
 @connect((store) => {
     return {
-        processing: store.processing,
-        failed: store.failed,
-        result: store.result
+        processing: store.reducer.processing,
+        failed: store.reducer.failed,
+        result: store.reducer.result
     };
 })
 export default class Result extends React.Component {
@@ -34,3 +34,8 @@ export default class Result extends React.Component {
     }
   }
 }
+
+Result.contextTypes = {
+  router: React.PropTypes.object.isRequired,
+  store: React.PropTypes.object.isRequired
+};

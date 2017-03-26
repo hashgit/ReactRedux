@@ -3,6 +3,8 @@ export default function(state = {
     failed: null,
     result: null
 }, action) {
+    console.log(action);
+
     if (action.type === 'CONVERT_PENDING') {
         let newState = {...state};
         newState.processing = true;
